@@ -33,6 +33,10 @@ Install a single skill by path (sparse checkout):
 npx skills add https://github.com/interstitial-systems/skills/tree/main/skills/planetary
 ```
 
+### Claude (claude.ai) custom Skill upload
+
+Anthropic’s product expects a **short `description` (≤200 characters)** so Claude knows when to load the skill; the long-form detail stays in the markdown body below the frontmatter (this repo follows that). For **upload** flows, create a zip whose root is one folder (e.g. `planetary/`) containing a **`Skill.md`** file — see [Creating custom Skills](https://support.claude.com/en/articles/12512198-creating-custom-skills). You can copy `skills/planetary/SKILL.md` to `Skill.md` inside that folder before zipping. Enable it under **Customize → Skills** after upload.
+
 ### Claude Code (plugin marketplace)
 
 This repo includes [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json) so you can add it as a marketplace, then install the bundled plugin (same pattern as [anthropics/skills](https://github.com/anthropics/skills)):
